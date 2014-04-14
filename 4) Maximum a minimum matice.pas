@@ -1,7 +1,7 @@
 type mat=Array of Array of integer;
 var n,m:integer;
   arr:mat;
-  
+
 procedure generate;
 var i,i2:integer;
 begin
@@ -27,17 +27,20 @@ end;
 function get(arr:mat;w:string):integer;
 var i,i2:integer;
 begin
+  get:=0;
+  if (w='min') then
+     get:=99; //pokud hledam minimum, tak musi byt puvodni hodnota maximum
   for i:=0 to (m-1) do
   begin
     for i2:=0 to (n-1) do
     begin
-      if (get>arr[i][i2]) AND (w='max') then
+      if (get<arr[i][i2]) AND (w='max') then
         get:=arr[i][i2]
-      else if (get<arr[i][i2]) AND (w='min') then
-        get:=arr[i][i2];
+      else if (get>arr[i][i2]) AND (w='min') then
+             get:=arr[i][i2];
     end;
   end;
-end; 
+end;
 
 begin
 write('Pocet radku: ');
