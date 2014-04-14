@@ -1,7 +1,7 @@
 type iarray=Array of integer;
 
-var n: integer; 
-  nums: iarray; 
+var n: integer;
+  nums: iarray;
   prum: real;
 
 procedure generate;
@@ -23,8 +23,10 @@ end;
 function prumer(arr: iarray):real;
 var i,sum:integer;
 begin
+  sum:=0;
   for i:=0 to n do
     sum:=sum+arr[i];
+  writeln('sum:', sum);
   prumer:=(sum/(n+1));
 end;
 
