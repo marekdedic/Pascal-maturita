@@ -1,7 +1,7 @@
 type mat=Array of Array of integer;
 var n,m:integer;
   arr:mat;
-  
+
 procedure generate;
 var i,i2:integer;
 begin
@@ -27,13 +27,14 @@ end;
 function prumer(arr:mat):real;
 var i,i2,sum:integer;
 begin
+  sum:=0;
   for i:=0 to (m-1) do
   begin
     for i2:=0 to (n-1) do
       sum:=sum+arr[i][i2];
   end;
   prumer:=(sum/(n*m));
-end; 
+end;
 
 begin
 write('Pocet radku: ');
