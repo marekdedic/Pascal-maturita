@@ -31,7 +31,8 @@ begin
   for i:=0 to (n-1) do
   begin
     for i2:=0 to (m-1) do
-      tarr[i][i2]:=arr[i2][i];
+        //tarr[i][i2]:=arr[n-1-i][m-1-i2]; // podle  vedlejší
+        tarr[i2][i]:=arr[i][i2];
   end;
 end;
 
