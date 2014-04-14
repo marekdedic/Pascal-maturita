@@ -1,16 +1,16 @@
-var x,y,w: integer;
+var x,y,w: real;
 r,f:real;
 
-procedure kar_to_pol(x,y:integer;var r,f:real);
+procedure kar_to_pol(x,y:real;var r,f:real);
 begin
   r:=sqrt(x*x+y*y);
-  f:=arctan(y/x);
+  f:=(arctan(y/x)*(180.0 / Pi));
 end;
 
-procedure pol_to_kar(r,f:real;var x,y:integer);
+procedure pol_to_kar(r,f:real;var x,y:real);
 begin
-  x:=round(r*cos(f));
-  y:=round(r*sin(f));
+  x:=r*cos(f/180*Pi);
+  y:=r*sin(f/180*Pi);
 end;
 
 begin
@@ -29,8 +29,8 @@ begin
     write('y=');
     readln(y);
     kar_to_pol(x,y,r,f);
-    writeln('r=',r);
-    writeln('fi=',f);
+    writeln('r=',r:3:4);
+    writeln('fi=',f:3:4);
     w:=3;
   end
   else if (w=2) then
@@ -40,8 +40,8 @@ begin
     write('fi=');
     readln(f);
     pol_to_kar(r,f,x,y);
-    writeln('x=',x);
-    writeln('y=',y);
+    writeln('x=',x:3:4);
+    writeln('y=',y:3:4);
     w:=3;
   end;
 end;
