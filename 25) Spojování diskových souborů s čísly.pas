@@ -1,5 +1,5 @@
-var f,f2:file of integer;
-i:integer;
+var f,f2:file of char;
+i:char;
 
 begin
 assign(f,'./soubor.txt');
