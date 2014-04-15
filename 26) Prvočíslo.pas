@@ -11,10 +11,10 @@ begin
   end
   else if (num=2) then
     exit;
-  for i:=2 to (num-1) do
+  for i:=2 to (round(sqrt(num-1))) do
   begin
     if ((num mod i)=0) then
-    begin 
+    begin
       is_primenum:=false;
       exit;
     end;
